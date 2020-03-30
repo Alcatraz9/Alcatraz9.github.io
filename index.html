@@ -11,8 +11,53 @@
 
 
     <style type="text/css">
+        /* *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        html {
+            box-sizing: border-box;
+            font-size: 100%;
+        } */
         html {
             scroll-behavior: smooth;
+        }
+
+        header {
+            position: absolute;
+            top: 0px;
+            display: flex;
+            /* align-items: flex-end; */
+            justify-content: space-between;
+            width: 100%;
+            padding: 2vw;
+            transition: padding 300ms ease;
+
+        }
+
+        header.sticky {
+            position: fixed;
+            top: 0px;
+            padding: 0px;
+            background-color: black;
+            /* justify-content: end; */
+            z-index: 10;
+        }
+
+        a.nav__link {
+            margin-left: 2vw;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* a.nav__link:last-child {
+            margin-right: 30vw;
+        } */
+
+        .logo {
+            margin: 2vw 2vw;
         }
 
         #homepage-bg {
@@ -25,20 +70,21 @@
 
         #profile-menu {
             background-color: rgb(0, 29, 56);
-            height: 15vw;
+            height: 13vw;
             width: 100%;
             font-size: 1vw;
         }
 
         #profile-menu a {
             text-decoration: none;
-            margin-left:10vw;
+            margin-left: 10vw;
             color: white;
         }
+
         .profiles {
             float: left;
             margin-left: 28vw;
-            margin-top: 4vw;
+            margin-top: 3vw;
         }
 
         #social-media {
@@ -56,28 +102,33 @@
         }
 
         .block {
-            padding: 0 8vw 0 8vw;
+            padding: 4vw 8vw 0 8vw;
+            border-top: 8vw;
+            height: 100%;
         }
 
         #main-text {
-            padding: 18vw 0 20vw 0;
+            padding: 18vw 12vw 20vw 14vw;
             text-align: center;
             color: white;
+            margin-left: 10vw;
         }
 
         #main-text h1 {
-            font-size:5vw;
+            font-size: 5vw;
             font-family: 'Sen', sans-serif;
             font-weight: bold;
         }
 
         #about {
-            padding: 3vw 0 3vw 0;            
+            /* position: relative; */
+            padding: 3vw 0 3vw 0;
+            z-index: 1000;
         }
 
         #about h3 {
             text-align: center;
-            font-size:5vw;
+            font-size: 5vw;
             font-family: 'Sen', sans-serif;
             font-weight: bold;
         }
@@ -88,10 +139,10 @@
 
         #about img {
             padding: 0 7vw;
-            height:25vw;
+            height: 25vw;
         }
     </style>
-    
+
 
 </head>
 
@@ -99,60 +150,51 @@
     <!-- HOMEPAGE -->
 
     <!-- NAVBAR -->
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark secondary-color">
-        <a class="navbar-brand" href="#">
-            <img src="logos/rish.png" style="width:8vw;" alt="logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse " id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#">Certificates</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">Internships</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button"
-                        aria-haspopup="true" aria-expanded="false">Projects</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Separated link</a>
-                    </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-white" href="#"><i class="fas fa-envelope "></i> Contact</a>
-                </li>
-            </ul>
+    <header>
+        <!-- <img class="logo" src="logos/rish.png" width="70" height="40" /> -->
+        <div class="container">
+            <nav class="navbar navbar-expand-md navbar-dark">
+                <a class="navbar-brand" href="#">Rish</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+                    aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end">
+
+                    <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link justify-content-end" href="#about-me">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link justify-content-end" href="#">Certificates</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link justify-content-end" href="#">Internships</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link justify-content-end" href="#">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link justify-content-end" href="#"><i class="fas fa-address-card "></i>
+                                Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
         </div>
-    </nav>
+
+    </header>
 
     <!-- NAVBAR END -->
     <!-- MAIN TEXT -->
     <section class="block" id="homepage-bg">
         <div class="row">
-            <div class="col-sm-10" id="main-text">
-                <h1>Hello,<br/>
+            <div id="main-text">
+                <h1>Hello,<br />
                     this is Rishabh</h1>
             </div>
-            <div class="col-sm-1" id="social-media">
+            <div id="social-media">
                 <div><a class="fab fa-facebook fa-2x circle-icon" href="#"
                         style="text-decoration: none;color: white;"></a>
                 </div>
@@ -165,111 +207,42 @@
     <!-- HOMEPAGE END -->
 
     <!-- ABOUT ME -->
-    <div class="block">
-        <div class="row"  id="about">
+    <div id="about-me"></div>
+    <section class="block">
+        <div class="row" id="about">
             <div class="col-md-6">
                 <h3>About</h3>
                 <p>
-                    Maecenas vitae rutrum libero, at efficitur ligula. Sed venenatis, quam quis vulputate tincidunt, lorem
-                    tortor interdum urna, vitae aliquam leo urna ut enim. Aenean interdum placerat nisl varius condimentum.
-                    Aenean vehicula mi aliquam sem tempus tincidunt. In mauris tellus, bibendum eu magna a, posuere pharetra
+                    Maecenas vitae rutrum libero, at efficitur ligula. Sed venenatis, quam quis vulputate tincidunt,
+                    lorem
+                    tortor interdum urna, vitae aliquam leo urna ut enim. Aenean interdum placerat nisl varius
+                    condimentum.
+                    Aenean vehicula mi aliquam sem tempus tincidunt. In mauris tellus, bibendum eu magna a, posuere
+                    pharetra
                     dolor. Ut tincidunt sapien a pulvinar vehicula. Integer ultrices bibendum urna, nec venenatis lacus
-                    imperdiet at. Fusce semper, libero consectetur venenatis convallis, sapien enim consectetur elit, sit
+                    imperdiet at. Fusce semper, libero consectetur venenatis convallis, sapien enim consectetur elit,
+                    sit
                     amet convallis ante lacus et felis. Suspendisse pulvinar laoreet leo.
                 </p>
             </div>
             <div class="col-md-3">
-                <img src="logos/potato.jpg">
+                <img src="logos/potato.jpg" alt="My-pic">
             </div>
         </div>
-    </div>
+    </section>
     <!-- ABOUT ME END -->
 
     <!-- PROFILE MENU -->
     <section>
-        <div id="profile-menu" >
+        <div id="profile-menu">
             <div><a class="fab fa-hackerrank fa-7x profiles" href="#" style="margin-left: 27vw;"></a>
             </div>
-            <div><a class="fab fa-github fa-7x profiles" href="#"
-                    ></a></div>
-            <div><a class="fab fa-linkedin fa-7x profiles" href="#"
-                    ></a></div>
+            <div><a class="fab fa-github fa-7x profiles" href="#"></a></div>
+            <div><a class="fab fa-linkedin fa-7x profiles" href="#"></a></div>
         </div>
     </section>
     <!-- PROFILE MENU END -->
 
-    <div class="block">
-        <div>
-            <p>
-                Maecenas vitae rutrum libero, at efficitur ligula. Sed venenatis, quam quis vulputate tincidunt, lorem
-                tortor interdum urna, vitae aliquam leo urna ut enim. Aenean interdum placerat nisl varius condimentum.
-                Aenean vehicula mi aliquam sem tempus tincidunt. In mauris tellus, bibendum eu magna a, posuere pharetra
-                dolor. Ut tincidunt sapien a pulvinar vehicula. Integer ultrices bibendum urna, nec venenatis lacus
-                imperdiet at. Fusce semper, libero consectetur venenatis convallis, sapien enim consectetur elit, sit
-                amet convallis ante lacus et felis. Suspendisse pulvinar laoreet leo. Duis interdum arcu quam, ut
-                facilisis velit vehicula ut. Cras orci risus, aliquam sed ipsum a, facilisis condimentum libero. Aenean
-                ipsum tellus, accumsan at ornare id, pellentesque vel magna. Integer a suscipit nisl, et vestibulum
-                justo. Aliquam id massa sed sem congue convallis. Pellentesque vitae nibh et orci ultrices placerat.
-            </p>
-            <p>
-                Vivamus quis maximus odio. Mauris facilisis nunc felis, malesuada auctor enim fringilla et. Ut ac ipsum
-                nunc. Integer congue pellentesque augue, sollicitudin cursus augue malesuada et. Nulla facilisis vel
-                nulla eleifend efficitur. Nam mollis eros non purus dapibus aliquam. In eleifend placerat turpis sit
-                amet dignissim. Cras id urna tortor. Pellentesque tincidunt ante mi, eu mattis augue malesuada ut.
-                Nullam lacinia, felis sed posuere lacinia, metus dui sagittis lorem, sed bibendum risus ipsum in dui.
-                Fusce leo metus, scelerisque non efficitur sagittis, laoreet a dolor. Donec vitae suscipit tortor. Etiam
-                ut enim nisi. Nulla facilisi. Nam eleifend nisl at mi condimentum, vel vehicula nunc maximus. Sed
-                iaculis mauris ac elit fermentum consequat.
-            </p>
-            <p>
-                Aenean magna purus, fermentum id urna finibus, volutpat viverra augue. Aenean porttitor pharetra mi sed
-                interdum. Mauris in nulla semper, fermentum augue non, ornare est. Praesent non arcu quis nunc molestie
-                vulputate non ac neque. Sed gravida eleifend velit, vitae congue tellus euismod et. In posuere odio in
-                lorem convallis tempor. Fusce laoreet enim quis dictum blandit. Quisque vel dignissim ante, eu commodo
-                risus. Cras at maximus justo, id aliquam diam.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus, ligula nec gravida
-                congue, quam velit pulvinar tortor, eu maximus nisl enim et lectus. Vestibulum auctor lacus congue nibh
-                ornare porta eu ut risus. Vivamus viverra purus a ante mollis hendrerit. Praesent at maximus massa.
-                Pellentesque convallis a metus non aliquam. Donec libero mauris, tristique non odio et, ultricies rutrum
-                enim. Praesent quis lacus quis erat tempus pellentesque. Sed eget nulla at libero imperdiet fermentum.
-                Integer semper metus quis lorem porta, eget tristique ipsum dapibus. Cras convallis, est sit amet
-                lobortis semper, magna lectus scelerisque nibh, sit amet semper dui orci ac ante. Sed nec commodo metus.
-                Donec ultrices in purus a facilisis. Nulla libero turpis, maximus et rhoncus ut, molestie et leo.
-                Aliquam et arcu vitae est pretium imperdiet.
-
-                Maecenas vitae rutrum libero, at efficitur ligula. Sed venenatis, quam quis vulputate tincidunt, lorem
-                tortor interdum urna, vitae aliquam leo urna ut enim. Aenean interdum placerat nisl varius condimentum.
-                Aenean vehicula mi aliquam sem tempus tincidunt. In mauris tellus, bibendum eu magna a, posuere pharetra
-                dolor. Ut tincidunt sapien a pulvinar vehicula. Integer ultrices bibendum urna, nec venenatis lacus
-                imperdiet at. Fusce semper, libero consectetur venenatis convallis, sapien enim consectetur elit, sit
-                amet convallis ante lacus et felis. Suspendisse pulvinar laoreet leo. Duis interdum arcu quam, ut
-                facilisis velit vehicula ut. Cras orci risus, aliquam sed ipsum a, facilisis condimentum libero. Aenean
-                ipsum tellus, accumsan at ornare id, pellentesque vel magna. Integer a suscipit nisl, et vestibulum
-                justo. Aliquam id massa sed sem congue convallis. Pellentesque vitae nibh et orci ultrices placerat.
-
-                Vivamus quis maximus odio. Mauris facilisis nunc felis, malesuada auctor enim fringilla et. Ut ac ipsum
-                nunc. Integer congue pellentesque augue, sollicitudin cursus augue malesuada et. Nulla facilisis vel
-                nulla eleifend efficitur. Nam mollis eros non purus dapibus aliquam. In eleifend placerat turpis sit
-                amet dignissim. Cras id urna tortor. Pellentesque tincidunt ante mi, eu mattis augue malesuada ut.
-                Nullam lacinia, felis sed posuere lacinia, metus dui sagittis lorem, sed bibendum risus ipsum in dui.
-                Fusce leo metus, scelerisque non efficitur sagittis, laoreet a dolor. Donec vitae suscipit tortor. Etiam
-                ut enim nisi. Nulla facilisi. Nam eleifend nisl at mi condimentum, vel vehicula nunc maximus. Sed
-                iaculis mauris ac elit fermentum consequat.
-
-                Aenean magna purus, fermentum id urna finibus, volutpat viverra augue. Aenean porttitor pharetra mi sed
-                interdum. Mauris in nulla semper, fermentum augue non, ornare est. Praesent non arcu quis nunc molestie
-                vulputate non ac neque. Sed gravida eleifend velit, vitae congue tellus euismod et. In posuere odio in
-                lorem convallis tempor. Fusce laoreet enim quis dictum blandit. Quisque vel dignissim ante, eu commodo
-                risus. Cras at maximus justo, id aliquam diam.
-
-                Pellentesque et finibus ante, malesuada porta mauris. Nam dictum pulvinar tortor, at congue risus cursus
-                nec. In hac habitasse platea dictumst. Vivamus vel massa consequat, dignissim enim nec, scelerisque ex.
-                Phasellus consectetur vitae purus quis lobortis. Pellentesque a turpis ipsum. Aenean quis accumsan
-                justo. Morbi eu arcu vitae arcu condimentum convallis ut ac ligula. Sed ac accumsan velit. Duis finibus
-                lacinia nisi, vitae viverra mauris efficitur suscipit.
-            </p>
-        </div>
-    </div>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -279,6 +252,44 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script>
+        ; (function () {
+            function t() { } function e(t) { return null == t ? t === l ? d : y : I && I in Object(t) ? n(t) : r(t) } function n(t) { var e = $.call(t, I), n = t[I]; try { t[I] = l; var r = true } catch (t) { } var o = _.call(t); return r && (e ? t[I] = n : delete t[I]), o } function r(t) { return _.call(t) } function o(t, e, n) {
+                function r(e) { var n = d, r = g; return d = g = l, x = e, v = t.apply(r, n) } function o(t) { return x = t, O = setTimeout(c, e), T ? r(t) : v } function i(t) { var n = t - h, r = t - x, o = e - n; return w ? k(o, j - r) : o } function f(t) { var n = t - h, r = t - x; return h === l || n >= e || n < 0 || w && r >= j } function c() {
+                    var t = D(); return f(t) ? p(t) : (O = setTimeout(c, i(t)), l)
+                } function p(t) { return O = l, S && d ? r(t) : (d = g = l, v) } function s() { O !== l && clearTimeout(O), x = 0, d = h = g = O = l } function y() { return O === l ? v : p(D()) } function m() { var t = D(), n = f(t); if (d = arguments, g = this, h = t, n) { if (O === l) return o(h); if (w) return O = setTimeout(c, e), r(h) } return O === l && (O = setTimeout(c, e)), v } var d, g, j, v, O, h, x = 0, T = false, w = false, S = true; if (typeof t != "function") throw new TypeError(b); return e = a(e) || 0, u(n) && (T = !!n.leading, w = "maxWait" in n, j = w ? M(a(n.maxWait) || 0, e) : j, S = "trailing" in n ? !!n.trailing : S),
+                    m.cancel = s, m.flush = y, m
+            } function i(t, e, n) { var r = true, i = true; if (typeof t != "function") throw new TypeError(b); return u(n) && (r = "leading" in n ? !!n.leading : r, i = "trailing" in n ? !!n.trailing : i), o(t, e, { leading: r, maxWait: e, trailing: i }) } function u(t) { var e = typeof t; return null != t && ("object" == e || "function" == e) } function f(t) { return null != t && typeof t == "object" } function c(t) { return typeof t == "symbol" || f(t) && e(t) == m } function a(t) {
+                if (typeof t == "number") return t; if (c(t)) return s; if (u(t)) {
+                    var e = typeof t.valueOf == "function" ? t.valueOf() : t;
+                    t = u(e) ? e + "" : e
+                } if (typeof t != "string") return 0 === t ? t : +t; t = t.replace(g, ""); var n = v.test(t); return n || O.test(t) ? h(t.slice(2), n ? 2 : 8) : j.test(t) ? s : +t
+            } var l, p = "4.17.5", b = "Expected a function", s = NaN, y = "[object Null]", m = "[object Symbol]", d = "[object Undefined]", g = /^\s+|\s+$/g, j = /^[-+]0x[0-9a-f]+$/i, v = /^0b[01]+$/i, O = /^0o[0-7]+$/i, h = parseInt, x = typeof global == "object" && global && global.Object === Object && global, T = typeof self == "object" && self && self.Object === Object && self, w = x || T || Function("return this")(), S = typeof exports == "object" && exports && !exports.nodeType && exports, N = S && typeof module == "object" && module && !module.nodeType && module, E = Object.prototype, $ = E.hasOwnProperty, _ = E.toString, W = w.Symbol, I = W ? W.toStringTag : l, M = Math.max, k = Math.min, D = function () {
+                return w.Date.now()
+            }; t.debounce = o, t.throttle = i, t.isObject = u, t.isObjectLike = f, t.isSymbol = c, t.now = D, t.toNumber = a, t.VERSION = p, typeof define == "function" && typeof define.amd == "object" && define.amd ? (w._ = t, define(function () { return t })) : N ? ((N.exports = t)._ = t, S._ = t) : w._ = t
+        }).call(this);
+
+
+
+        var checkHeader = _.throttle(() => {
+            console.log('checkHeader');
+
+            // Detect scroll position
+            let scrollPosition = Math.round(window.scrollY);
+
+            // If we've scrolled 100px, add "sticky" class to the header
+            if (scrollPosition > 10) {
+                document.querySelector('header').classList.add('sticky');
+            }
+            // If not, remove "sticky" class from header
+            else {
+                document.querySelector('header').classList.remove('sticky');
+            }
+        }, 100);
+
+        // Run the checkHeader function every time you scroll
+        window.addEventListener('scroll', checkHeader);
+    </script>
 </body>
 <footer>
 

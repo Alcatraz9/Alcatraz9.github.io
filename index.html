@@ -3,49 +3,47 @@
 <title>Rishabh</title>
 
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/3626b367fe.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
+    <meta name=”viewport” content=”width=device-width, initial-scale=1.0">
+
+
     <style type="text/css">
         html {
             scroll-behavior: smooth;
-            height: 100%;
         }
 
-        body {
+        #homepage-bg {
             background-image: url("logos/banner.png");
-
-            /* Full height */
             height: 100%;
-
-            /* Center and scale the image nicely */
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
         }
 
-        .topbar {
-            position: absolute;
-            top: 3vw;
-            left: 30vw;
-        }
-
         #profile-menu {
             background-color: rgb(0, 29, 56);
-            position: absolute;
-            top: 48vw;
-            left: 0vw;
-            height: 12vw;
+            height: 15vw;
             width: 100%;
+            font-size: 1vw;
         }
 
+        #profile-menu a {
+            text-decoration: none;
+            margin-left:10vw;
+            color: white;
+        }
         .profiles {
             float: left;
             margin-left: 28vw;
-            margin-top: 3vw;
+            margin-top: 4vw;
         }
 
         #social-media {
-            position: absolute;
-            top: 22vw;
-            right: 10vw;
+            font-size: 1vw;
+            margin-top: 19vw;
             display: block;
 
         }
@@ -57,107 +55,221 @@
             border-radius: 50%;
         }
 
+        .block {
+            padding: 0 8vw 0 8vw;
+        }
+
         #main-text {
-            position: absolute;
-            top: 23vw;
-            left: 23vw;
+            padding: 18vw 0 20vw 0;
+            text-align: center;
             color: white;
         }
+
+        #main-text h1 {
+            font-size:5vw;
+            font-family: 'Sen', sans-serif;
+            font-weight: bold;
+        }
+
+        #about {
+            padding: 3vw 0 3vw 0;            
+        }
+
+        #about h3 {
+            text-align: center;
+            font-size:5vw;
+            font-family: 'Sen', sans-serif;
+            font-weight: bold;
+        }
+
+        #about p {
+            font-family: 'Sen', sans-serif;
+        }
+
+        #about img {
+            padding: 0 7vw;
+            height:25vw;
+        }
     </style>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://kit.fontawesome.com/3626b367fe.js" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css?family=Sen&display=swap" rel="stylesheet">
-    <meta name=”viewport” content=”width=device-width, initial-scale=1.0">
+    
 
 </head>
 
 <body>
     <!-- HOMEPAGE -->
-        <!-- NAVBAR -->
-        <nav class="navbar sticky-top navbar-expand-lg navbar-dark secondary-color">
-            <a class="navbar-brand" href="#">
-                <img src="logos/rish.png" style="width:80px;" alt="mdb logo">
-            </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#">Certificates</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Internships</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button"
-                            aria-haspopup="true" aria-expanded="false">Projects</a>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-white" href="#"><i class="fas fa-envelope"></i> Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
 
-        <!-- NAVBAR END -->
-        <!-- MAIN TEXT -->
-        <div class="container-fluid">
-            <div id="social-media" style="font-size: 1vw;">
+    <!-- NAVBAR -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark secondary-color">
+        <a class="navbar-brand" href="#">
+            <img src="logos/rish.png" style="width:8vw;" alt="logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse " id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#">Certificates</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Internships</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" data-toggle="dropdown" href="#" role="button"
+                        aria-haspopup="true" aria-expanded="false">Projects</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#">action</a>
+                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="#">Something else here</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Separated link</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="#"><i class="fas fa-envelope "></i> Contact</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- NAVBAR END -->
+    <!-- MAIN TEXT -->
+    <section class="block" id="homepage-bg">
+        <div class="row">
+            <div class="col-sm-10" id="main-text">
+                <h1>Hello,<br/>
+                    this is Rishabh</h1>
+            </div>
+            <div class="col-sm-1" id="social-media">
                 <div><a class="fab fa-facebook fa-2x circle-icon" href="#"
-                        style="text-decoration: none;color: white;"></a></div>
+                        style="text-decoration: none;color: white;"></a>
+                </div>
                 <div><a class="fab fa-instagram fa-2x circle-icon" href="#"
-                        style="text-decoration: none; margin-top: 40px;color: white;"></a></div>
+                        style="text-decoration: none; margin-top: 2vw;color: white;"></a></div>
             </div>
         </div>
-        <div id="main-text">
-            <h1 style="font-size:5vw;font-family: 'Sen', sans-serif;font-weight: bold;">Hello,
-                this is Rishabh</h1>
-        </div>
-        <!-- MAIN TEXT END -->
-
+    </section>
+    <!-- MAIN TEXT END -->
     <!-- HOMEPAGE END -->
 
     <!-- ABOUT ME -->
-    <div id="about-me">
-
+    <div class="block">
+        <div class="row"  id="about">
+            <div class="col-md-6">
+                <h3>About</h3>
+                <p>
+                    Maecenas vitae rutrum libero, at efficitur ligula. Sed venenatis, quam quis vulputate tincidunt, lorem
+                    tortor interdum urna, vitae aliquam leo urna ut enim. Aenean interdum placerat nisl varius condimentum.
+                    Aenean vehicula mi aliquam sem tempus tincidunt. In mauris tellus, bibendum eu magna a, posuere pharetra
+                    dolor. Ut tincidunt sapien a pulvinar vehicula. Integer ultrices bibendum urna, nec venenatis lacus
+                    imperdiet at. Fusce semper, libero consectetur venenatis convallis, sapien enim consectetur elit, sit
+                    amet convallis ante lacus et felis. Suspendisse pulvinar laoreet leo.
+                </p>
+            </div>
+            <div class="col-md-3">
+                <img src="logos/potato.jpg">
+            </div>
+        </div>
     </div>
     <!-- ABOUT ME END -->
 
     <!-- PROFILE MENU -->
-    <div class="container">
-        <div id="profile-menu" style="font-size: 1vw;">
-            <div><a class="fab fa-hackerrank fa-7x profiles" href="#" style="text-decoration: none;color: white;"></a>
+    <section>
+        <div id="profile-menu" >
+            <div><a class="fab fa-hackerrank fa-7x profiles" href="#" style="margin-left: 27vw;"></a>
             </div>
             <div><a class="fab fa-github fa-7x profiles" href="#"
-                    style="text-decoration: none; margin-left: 10vw;color: white;"></a></div>
+                    ></a></div>
             <div><a class="fab fa-linkedin fa-7x profiles" href="#"
-                    style="text-decoration: none; margin-left: 10vw;color: white;"></a></div>
+                    ></a></div>
+        </div>
+    </section>
+    <!-- PROFILE MENU END -->
+
+    <div class="block">
+        <div>
+            <p>
+                Maecenas vitae rutrum libero, at efficitur ligula. Sed venenatis, quam quis vulputate tincidunt, lorem
+                tortor interdum urna, vitae aliquam leo urna ut enim. Aenean interdum placerat nisl varius condimentum.
+                Aenean vehicula mi aliquam sem tempus tincidunt. In mauris tellus, bibendum eu magna a, posuere pharetra
+                dolor. Ut tincidunt sapien a pulvinar vehicula. Integer ultrices bibendum urna, nec venenatis lacus
+                imperdiet at. Fusce semper, libero consectetur venenatis convallis, sapien enim consectetur elit, sit
+                amet convallis ante lacus et felis. Suspendisse pulvinar laoreet leo. Duis interdum arcu quam, ut
+                facilisis velit vehicula ut. Cras orci risus, aliquam sed ipsum a, facilisis condimentum libero. Aenean
+                ipsum tellus, accumsan at ornare id, pellentesque vel magna. Integer a suscipit nisl, et vestibulum
+                justo. Aliquam id massa sed sem congue convallis. Pellentesque vitae nibh et orci ultrices placerat.
+            </p>
+            <p>
+                Vivamus quis maximus odio. Mauris facilisis nunc felis, malesuada auctor enim fringilla et. Ut ac ipsum
+                nunc. Integer congue pellentesque augue, sollicitudin cursus augue malesuada et. Nulla facilisis vel
+                nulla eleifend efficitur. Nam mollis eros non purus dapibus aliquam. In eleifend placerat turpis sit
+                amet dignissim. Cras id urna tortor. Pellentesque tincidunt ante mi, eu mattis augue malesuada ut.
+                Nullam lacinia, felis sed posuere lacinia, metus dui sagittis lorem, sed bibendum risus ipsum in dui.
+                Fusce leo metus, scelerisque non efficitur sagittis, laoreet a dolor. Donec vitae suscipit tortor. Etiam
+                ut enim nisi. Nulla facilisi. Nam eleifend nisl at mi condimentum, vel vehicula nunc maximus. Sed
+                iaculis mauris ac elit fermentum consequat.
+            </p>
+            <p>
+                Aenean magna purus, fermentum id urna finibus, volutpat viverra augue. Aenean porttitor pharetra mi sed
+                interdum. Mauris in nulla semper, fermentum augue non, ornare est. Praesent non arcu quis nunc molestie
+                vulputate non ac neque. Sed gravida eleifend velit, vitae congue tellus euismod et. In posuere odio in
+                lorem convallis tempor. Fusce laoreet enim quis dictum blandit. Quisque vel dignissim ante, eu commodo
+                risus. Cras at maximus justo, id aliquam diam.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque rhoncus, ligula nec gravida
+                congue, quam velit pulvinar tortor, eu maximus nisl enim et lectus. Vestibulum auctor lacus congue nibh
+                ornare porta eu ut risus. Vivamus viverra purus a ante mollis hendrerit. Praesent at maximus massa.
+                Pellentesque convallis a metus non aliquam. Donec libero mauris, tristique non odio et, ultricies rutrum
+                enim. Praesent quis lacus quis erat tempus pellentesque. Sed eget nulla at libero imperdiet fermentum.
+                Integer semper metus quis lorem porta, eget tristique ipsum dapibus. Cras convallis, est sit amet
+                lobortis semper, magna lectus scelerisque nibh, sit amet semper dui orci ac ante. Sed nec commodo metus.
+                Donec ultrices in purus a facilisis. Nulla libero turpis, maximus et rhoncus ut, molestie et leo.
+                Aliquam et arcu vitae est pretium imperdiet.
+
+                Maecenas vitae rutrum libero, at efficitur ligula. Sed venenatis, quam quis vulputate tincidunt, lorem
+                tortor interdum urna, vitae aliquam leo urna ut enim. Aenean interdum placerat nisl varius condimentum.
+                Aenean vehicula mi aliquam sem tempus tincidunt. In mauris tellus, bibendum eu magna a, posuere pharetra
+                dolor. Ut tincidunt sapien a pulvinar vehicula. Integer ultrices bibendum urna, nec venenatis lacus
+                imperdiet at. Fusce semper, libero consectetur venenatis convallis, sapien enim consectetur elit, sit
+                amet convallis ante lacus et felis. Suspendisse pulvinar laoreet leo. Duis interdum arcu quam, ut
+                facilisis velit vehicula ut. Cras orci risus, aliquam sed ipsum a, facilisis condimentum libero. Aenean
+                ipsum tellus, accumsan at ornare id, pellentesque vel magna. Integer a suscipit nisl, et vestibulum
+                justo. Aliquam id massa sed sem congue convallis. Pellentesque vitae nibh et orci ultrices placerat.
+
+                Vivamus quis maximus odio. Mauris facilisis nunc felis, malesuada auctor enim fringilla et. Ut ac ipsum
+                nunc. Integer congue pellentesque augue, sollicitudin cursus augue malesuada et. Nulla facilisis vel
+                nulla eleifend efficitur. Nam mollis eros non purus dapibus aliquam. In eleifend placerat turpis sit
+                amet dignissim. Cras id urna tortor. Pellentesque tincidunt ante mi, eu mattis augue malesuada ut.
+                Nullam lacinia, felis sed posuere lacinia, metus dui sagittis lorem, sed bibendum risus ipsum in dui.
+                Fusce leo metus, scelerisque non efficitur sagittis, laoreet a dolor. Donec vitae suscipit tortor. Etiam
+                ut enim nisi. Nulla facilisi. Nam eleifend nisl at mi condimentum, vel vehicula nunc maximus. Sed
+                iaculis mauris ac elit fermentum consequat.
+
+                Aenean magna purus, fermentum id urna finibus, volutpat viverra augue. Aenean porttitor pharetra mi sed
+                interdum. Mauris in nulla semper, fermentum augue non, ornare est. Praesent non arcu quis nunc molestie
+                vulputate non ac neque. Sed gravida eleifend velit, vitae congue tellus euismod et. In posuere odio in
+                lorem convallis tempor. Fusce laoreet enim quis dictum blandit. Quisque vel dignissim ante, eu commodo
+                risus. Cras at maximus justo, id aliquam diam.
+
+                Pellentesque et finibus ante, malesuada porta mauris. Nam dictum pulvinar tortor, at congue risus cursus
+                nec. In hac habitasse platea dictumst. Vivamus vel massa consequat, dignissim enim nec, scelerisque ex.
+                Phasellus consectetur vitae purus quis lobortis. Pellentesque a turpis ipsum. Aenean quis accumsan
+                justo. Morbi eu arcu vitae arcu condimentum convallis ut ac ligula. Sed ac accumsan velit. Duis finibus
+                lacinia nisi, vitae viverra mauris efficitur suscipit.
+            </p>
         </div>
     </div>
-    <!-- PROFILE MENU END -->
-</body>
-<footer>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
         integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
         crossorigin="anonymous"></script>
@@ -167,6 +279,9 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+</body>
+<footer>
+
 </footer>
 
 </html>
